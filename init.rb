@@ -2,11 +2,11 @@ require File.expand_path('lib/mermaid_macro_hook', __dir__)
 
 Redmine::Plugin.register :redmine_mermaid_macro do
   name 'Redmine Mermaid Macro plugin'
-  author 'Taiki IKEGAME'
-  description 'Add mermaid graphs to your wiki.'
+  author 'EAJ'
+  description 'Add mermaid graphs to your wiki. Fork of taikii/redmine_mermaid_macro.'
   version '1.1.0'
-  url 'https://github.com/taikii/redmine_mermaid_macro'
-  author_url 'https://taikii.github.io'
+  url 'https://github.com/eaj2003/redmine_mermaid_macro'
+  author_url 'https://emergency.co.jp'
 
   settings :default => { 'mermaid_url' => 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs' },
            :partial => 'settings/redmine_mermaid_macro_settings'
