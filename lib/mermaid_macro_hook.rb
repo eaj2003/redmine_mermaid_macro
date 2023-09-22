@@ -17,6 +17,10 @@ class MermaidMacroHook < Redmine::Hook::ViewListener
     js << "}"
     js << "}"
     js << "</script>\n"
+    js << "<script type=\"module\">\n"
+    js << "import mermaid from 'mermaid';\n"
+    js << "window.mermaid = mermaid;\n"
+    js << "</script>\n"
     return js
     # return javascript_tag(js, type: 'importmap').html_safe
   end

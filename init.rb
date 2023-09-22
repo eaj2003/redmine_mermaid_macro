@@ -24,13 +24,12 @@ Redmine::Plugin.register :redmine_mermaid_macro do
       divid = "mermaid_" + SecureRandom.urlsafe_base64(8)
 
       js = ""
-      js << "import mermaid from 'mermaid';\n"
-      js << "mermaid.initialize({ startOnLoad: false });\n"
-      js << "mermaid.run({querySelector: '##{divid}'});\n"
+      js << "window.mermaid.initialize({ startOnLoad: false });\n"
+      js << "window.mermaid.run({querySelector: '##{divid}'});\n"
 
       out = ''.html_safe
       out << content_tag(:div, text, id: divid, class: 'mermaid')
-      out << javascript_tag(js, type: 'module')
+      out << javascript_tag(js)
       out
     end
   end
